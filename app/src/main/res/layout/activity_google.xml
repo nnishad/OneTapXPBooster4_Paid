@@ -12,7 +12,7 @@
             android:layout_width="329dp"
             android:layout_height="108dp"
             android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@drawable/firebase_lockup_400"
+            android:src="@drawable/onetapxpbooster4xxhdpi"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
