@@ -1,4 +1,4 @@
-package com.nightowldevelopers.onetapxpbooster4;
+package com.nightowldevelopers.onetapxpbooster4
 
 
 import android.app.ProgressDialog
