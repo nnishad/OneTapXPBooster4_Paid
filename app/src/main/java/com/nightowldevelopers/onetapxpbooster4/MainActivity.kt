@@ -159,8 +159,6 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
 
         disconnectButton.setOnClickListener {
             val app_id = mFirebaseRemoteConfig.getString("App_Id")
-            val developerurl =
-                "4619988116632070762" // getPackageName() from Context or Activity object
             try {
                 startActivity(
                     Intent(
@@ -177,7 +175,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                     Intent(
                         Intent.ACTION_VIEW,
                         //Uri.parse("https://play.google.com/store/apps/dev?id=$developerurl")
-                        Uri.parse("market://details?id=com.nightowldevelopers.onetapxpbooster3")
+                        Uri.parse("market://details?id=" + app_id)
                     )
                 )
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
@@ -359,6 +357,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
             /*rateApp.visibility = View.VISIBLE
             textViewRate.visibility = View.VISIBLE*/
             textViewIG.visibility = View.VISIBLE
+            progressBar.visibility = View.GONE
 
         } else {
             status.setText(R.string.signed_out)
@@ -448,6 +447,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 if (responseCode == BillingClient.BillingResponse.OK) {
                     println("querySkuDetailsAsync, responseCode: $responseCode")
                     initProductAdapter(skuDetailsList)
+                    progressBar.visibility = View.GONE
                 } else {
                     println("Can't querySkuDetailsAsync, responseCode: $responseCode")
                 }
