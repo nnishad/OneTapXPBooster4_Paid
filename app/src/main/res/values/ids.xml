@@ -1,43 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 Google Play game services IDs.
 Save this file as res/values/games-ids.xml in your project.
 -->
 <resources>
     <!-- app_id -->
-    <string name="app_id" translatable="false">894024961068</string>
-    <!-- package_name -->
-    <string name="package_name" translatable="false">com.nightowldevelopers.levelup2</string>
+    <string name="app_id" translatable="false">117492833542</string>
     <!-- achievement Level 1 -->
-    <string name="achievement_level_1" translatable="false">CgkIrJipwIIaEAIQAQ</string>
+    <string name="achievement_level_1" translatable="false">CgkIhrr52LUDEAIQAA</string>
     <!-- achievement Level 2 -->
-    <string name="achievement_level_2" translatable="false">CgkIrJipwIIaEAIQAg</string>
+    <string name="achievement_level_2" translatable="false">CgkIhrr52LUDEAIQAQ</string>
     <!-- achievement Level 3 -->
-    <string name="achievement_level_3" translatable="false">CgkIrJipwIIaEAIQAw</string>
+    <string name="achievement_level_3" translatable="false">CgkIhrr52LUDEAIQAg</string>
     <!-- achievement Level 4 -->
-    <string name="achievement_level_4" translatable="false">CgkIrJipwIIaEAIQBA</string>
+    <string name="achievement_level_4" translatable="false">CgkIhrr52LUDEAIQAw</string>
     <!-- achievement Level 5 -->
-    <string name="achievement_level_5" translatable="false">CgkIrJipwIIaEAIQBg</string>
+    <string name="achievement_level_5" translatable="false">CgkIhrr52LUDEAIQBA</string>
     <!-- achievement Level 6 -->
-    <string name="achievement_level_6" translatable="false">CgkIrJipwIIaEAIQCA</string>
+    <string name="achievement_level_6" translatable="false">CgkIhrr52LUDEAIQBQ</string>
     <!-- achievement Level 7 -->
-    <string name="achievement_level_7" translatable="false">CgkIrJipwIIaEAIQCQ</string>
+    <string name="achievement_level_7" translatable="false">CgkIhrr52LUDEAIQBg</string>
     <!-- achievement Level 8 -->
-    <string name="achievement_level_8" translatable="false">CgkIrJipwIIaEAIQCg</string>
+    <string name="achievement_level_8" translatable="false">CgkIhrr52LUDEAIQBw</string>
     <!-- achievement Level 9 -->
-    <string name="achievement_level_9" translatable="false">CgkIrJipwIIaEAIQCw</string>
-    <!-- achievement The Collector -->
-    <string name="achievement_the_collector" translatable="false">CgkIrJipwIIaEAIQDA</string>
+    <string name="achievement_level_9" translatable="false">CgkIhrr52LUDEAIQCA</string>
+    <!-- achievement Level 10 -->
+    <string name="achievement_level_10" translatable="false">CgkIhrr52LUDEAIQCQ</string>
+    <!-- achievement Level 11 -->
+    <string name="achievement_level_11" translatable="false">CgkIhrr52LUDEAIQCg</string>
+    <!-- achievement Level 12 -->
+    <string name="achievement_level_12" translatable="false">CgkIhrr52LUDEAIQCw</string>
+    <!-- achievement Level 13 -->
+    <string name="achievement_level_13" translatable="false">CgkIhrr52LUDEAIQDA</string>
     <!-- achievement Instagram Achievement -->
-    <string name="achievement_instagram_achievement" translatable="false">CgkIrJipwIIaEAIQDQ</string>
-    <!-- achievement Rate on Playstore -->
-    <string name="achievement_rate_on_playstore" translatable="false">CgkIrJipwIIaEAIQDg</string>
-    <!-- achievement More Xp -->
-    <string name="achievement_more_xp" translatable="false">CgkIrJipwIIaEAIQDw</string>
-    <!-- achievement Level 14 -->
-    <string name="achievement_level_14" translatable="false">CgkIrJipwIIaEAIQEQ</string>
-    <!-- achievement Level 15 -->
-    <string name="achievement_level_15" translatable="false">CgkIrJipwIIaEAIQEg</string>
+    <string name="achievement_instagram_achievement" translatable="false">CgkIhrr52LUDEAIQDQ</string>
+    <!-- achievement Rate Achievement -->
+    <string name="achievement_rate_achievement" translatable="false">CgkIhrr52LUDEAIQDg</string>
     <!-- leaderboard LeaderBoard -->
-    <string name="leaderboard_leaderboard" translatable="false">CgkIrJipwIIaEAIQBQ</string>
+    <string name="leaderboard_leaderboard" translatable="false">CgkIhrr52LUDEAIQDw</string>
 </resources>
