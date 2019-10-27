@@ -10,7 +10,7 @@ import android.os.Handler
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.widget.Toast.*
+import android.widget.Toast
 import com.android.billingclient.api.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -26,6 +26,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import kotlinx.android.synthetic.main.activity_google.*
 
+
+
 /**
  * Demonstrate Firebase Authentication using a Google ID Token.
  */
@@ -40,6 +42,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
     protected val RC_LEADERBOARD_UI = 9004
     private val RC_ACHIEVEMENT_UI = 9003
     private lateinit var googleSignInClient: GoogleSignInClient
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,10 +69,10 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
             try {
 
                 startActivity(likeIng)
-                makeText(
+                Toast.makeText(
                     this@MainActivity,
                     "Follow Us \n& Unlock your Achievement",
-                    LENGTH_LONG
+                    Toast.LENGTH_LONG
                 ).show()
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
                     .unlock(getString(R.string.achievement_instagram_achievement))
@@ -80,10 +83,10 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                     val mPlayer =
                         MediaPlayer.create(this@MainActivity, R.raw.ta_da_sound_click)
                     mPlayer.start()
-                    makeText(
+                    Toast.makeText(
                         this@MainActivity,
                         "Hurrah! Your Instagram Achievement is Unlocked !!",
-                        LENGTH_LONG
+                        Toast.LENGTH_LONG
                     )
                         .show()
                 }, 13000)
@@ -95,24 +98,24 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                         Uri.parse("http://instagram.com/nightowldevelopers")
                     )
                 )
-                makeText(
+                Toast.makeText(
                     this@MainActivity,
                     "Follow Us \n& Unlock your Achievement",
-                    LENGTH_LONG
+                    Toast.LENGTH_LONG
                 ).show()
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
                     .unlock(getString(R.string.achievement_instagram_achievement))
                 Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
                     .submitScore(getString(R.string.leaderboard_leaderboard), 200000)
-                Handler().postDelayed({
+                Handler().postDelayed(Runnable {
                     // Do something after 5s = 5000ms
                     val mPlayer =
                         MediaPlayer.create(this@MainActivity, R.raw.ta_da_sound_click)
                     mPlayer.start()
-                    makeText(
+                    Toast.makeText(
                         this@MainActivity,
                         "Hurrah! Your Instagram Achievement is Unlocked !!",
-                        LENGTH_LONG
+                        Toast.LENGTH_LONG
                     ).show()
                 }, 13000)
             }
@@ -125,7 +128,6 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 "Give 5-star Rating \n& Check your Achievement",
                 Toast.LENGTH_SHORT
             ).show()
-
             val appPackageName = packageName // getPackageName() from Context or Activity object
             try {
                 startActivity(
@@ -150,19 +152,16 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
                     .submitScore(getString(R.string.leaderboard_leaderboard), 150000)
             }
-
         }
         */
 
         disconnectButton.setOnClickListener {
             val app_id = mFirebaseRemoteConfig.getString("App_Id")
-            val developerurl =
-                "4619988116632070762" // getPackageName() from Context or Activity object
             try {
                 startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("market://details?id=$app_id")
+                        Uri.parse("market://details?id=" + app_id)
                     )
                 )
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
@@ -174,7 +173,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                     Intent(
                         Intent.ACTION_VIEW,
                         //Uri.parse("https://play.google.com/store/apps/dev?id=$developerurl")
-                        Uri.parse("market://details?id=com.nightowldevelopers.onetapxpbooster3")
+                        Uri.parse("market://details?id=" + app_id)
                     )
                 )
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
@@ -217,6 +216,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
     }
 
     private fun getRemoteConfigValues() {
+
         var cacheExpiration: Long = 7200//2 hours
 
         // Allow fetch on every call for now - remove/comment on production builds
@@ -355,6 +355,8 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
             /*rateApp.visibility = View.VISIBLE
             textViewRate.visibility = View.VISIBLE*/
             textViewIG.visibility = View.VISIBLE
+            progressBar.visibility = View.GONE
+
         } else {
             status.setText(R.string.signed_out)
             detail.text = null
@@ -443,6 +445,7 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 if (responseCode == BillingClient.BillingResponse.OK) {
                     println("querySkuDetailsAsync, responseCode: $responseCode")
                     initProductAdapter(skuDetailsList)
+                    progressBar.visibility = View.GONE
                 } else {
                     println("Can't querySkuDetailsAsync, responseCode: $responseCode")
                 }
@@ -466,8 +469,8 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
 
     override fun onPurchasesUpdated(responseCode: Int, purchases: MutableList<Purchase>?) {
         println("onPurchasesUpdated: $responseCode")
-        makeText(
-            this, "onPurchasesUpdated:$responseCode", LENGTH_LONG
+        Toast.makeText(
+            this, "onPurchasesUpdated:$responseCode", Toast.LENGTH_LONG
         )
         if (responseCode == 0) {
             Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
@@ -525,7 +528,6 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
 
 
         } else {
-
             //loadProducts.setText("Payment Failed!")
         }
 
@@ -538,8 +540,8 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
             billingClient.consumeAsync(purchase.purchaseToken) { responseCode, purchaseToken ->
                 if (responseCode == BillingClient.BillingResponse.OK && purchaseToken != null) {
                     println("AllowMultiplePurchases success, responseCode: $responseCode")
-                    makeText(
-                        this, "MultiplePurchase:$responseCode", LENGTH_LONG
+                    Toast.makeText(
+                        this, "MultiplePurchase:$responseCode", Toast.LENGTH_LONG
                     )
                 } else {
                     println("Can't allowMultiplePurchases, responseCode: $responseCode")
