@@ -128,7 +128,6 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 "Give 5-star Rating \n& Check your Achievement",
                 Toast.LENGTH_SHORT
             ).show()
-
             val appPackageName = packageName // getPackageName() from Context or Activity object
             try {
                 startActivity(
@@ -153,7 +152,6 @@ class MainActivity : BaseActivity(), PurchasesUpdatedListener, View.OnClickListe
                 Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this)!!)
                     .submitScore(getString(R.string.leaderboard_leaderboard), 150000)
             }
-
         }
         */
 
