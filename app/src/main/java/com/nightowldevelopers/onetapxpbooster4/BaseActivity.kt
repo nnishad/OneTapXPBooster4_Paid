@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.nightowldevelopers.onetapxpbooster4
 
 
@@ -8,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 
+@Suppress("DEPRECATION")
 open class BaseActivity : AppCompatActivity() {
 
     @VisibleForTesting
