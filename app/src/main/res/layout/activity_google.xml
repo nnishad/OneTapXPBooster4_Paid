@@ -42,12 +42,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView10"/>
 
     <Button
-            android:id="@+id/leaderboard"
+            android:id="@+id/rateApp"
             style="@style/MainScreenButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" android:background="@drawable/achieve"
+            android:layout_marginBottom="8dp" android:background="@drawable/rateus5"
             app:layout_constraintBottom_toBottomOf="@+id/homeLogo" app:layout_constraintEnd_toStartOf="@+id/instagram"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/instagram" app:layout_constraintVertical_bias="0.75"/>
@@ -58,9 +58,9 @@
             android:layout_marginTop="8dp"
             android:text="@string/invite_players_explanation"
 
-            android:textColor="#ffffff" app:layout_constraintEnd_toEndOf="@+id/leaderboard"
-            app:layout_constraintStart_toStartOf="@+id/leaderboard"
-            app:layout_constraintTop_toBottomOf="@+id/leaderboard"/>
+            android:textColor="#ffffff" app:layout_constraintEnd_toEndOf="@+id/rateApp"
+            app:layout_constraintStart_toStartOf="@+id/rateApp"
+            app:layout_constraintTop_toBottomOf="@+id/rateApp"/>
 
     <TextView
             android:id="@+id/textView3"
@@ -209,7 +209,7 @@
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="165dp"
                     android:layout_height="wrap_content"
-                    android:text="Get More XP"
+                    android:text="More XP"
                     android:textColor="@color/ButtonTextColor"
                     android:theme="@style/Base.Theme.MaterialComponents.Dialog"
                     app:layout_constraintBottom_toBottomOf="parent"
